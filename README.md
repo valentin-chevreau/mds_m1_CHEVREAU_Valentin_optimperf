@@ -23,6 +23,7 @@ Here, I called my cluster `mdsOptimPerf`
 ### In local
 
 **Create your cluster** 
+
 `docker network create mongo-cluster`
 
 **Lauch the three instances of mongoDB replicaset**
@@ -65,7 +66,7 @@ Inquire your *Cluster URL* in `db.js` file in `config` directory or comment and 
 
 ## Run
 
-Go to the project directory.
+Go to the directory project.
 
 To run the app, launch this command:
 `npm run start`
@@ -74,17 +75,17 @@ To run the app, launch this command:
 
 - **IN GET**
 
-    - To _list_ all tasks: `localhost:{port}/tasks`
-    - To _search_ a specific task: `localhost:{port}/tasks/:taskid`
+    - To _list_ all tasks: `/members`
+    - To _search_ a specific task: `/members/:memberid`
 
 - **IN POST**
 
-    - To _create_ a task: `localhost:{port}/tasks`
-    This previous command require to give the informations needed to create ("taskName")
+    - To _create_ a task: `/member/create`
+    This previous command require to give the informations needed to create ("memberName")
 
 - **IN PUT**
-    - To _update_ a specific task: `localhost:{port}/tasks`
-    This previous command require to give the informations to modify ("taskName" for exemple)
+    - To _update_ a specific task: `/member/:memberid`
+    This previous command require to give the informations to modify ("memberName" for exemple)
 
 - **IN DELETE**
-    - To _delete_ a specific task: `localhost:{port}/tasks/:taskid`
+    - To _delete_ a specific task: `/member/delete/:memberid`

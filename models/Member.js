@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // define new mongodb schema
-const TaskSchema = new Schema({
+const MemberSchema = new Schema({
   // attributes
-  taskName: {
+  memberName: {
     type: String,
     required: true
   },
@@ -15,4 +15,4 @@ const TaskSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("Tasks", TaskSchema);
+module.exports = mongoose.model("Members", MemberSchema);

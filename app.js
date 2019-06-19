@@ -1,7 +1,7 @@
 // modules import
 const express = require("express");
 const bodyParser = require("body-parser");
-const taskController = require("./controllers/TaskController");
+const memberController = require("./controllers/MemberController");
 
 // db instance connection
 require("./config/db");
@@ -13,22 +13,29 @@ const port = process.env.PORT || 3301;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// API ENDPOINTS
+// --- API ENDPOINTS ---
+
+// to list all members
 app
-  .route("/tasks")
-  // to list all tasks
-  .get(taskController.listAllTasks)
-  // to create a new task
-  .post(taskController.createNewTask);
+  .route("/members")
+  .get(memberController.listAllMembers)
+
+// to create a new member  
+app
+  .route("/member/create")
+  .post(memberController.createNewMember);
 
 app
-  .route("/tasks/:taskid")
-  // to display content task 
-  .get(taskController.readTask)
-  // to update content task
-  .put(taskController.updateTask)
-  // to display task
-  .delete(taskController.deleteTask);
+  .route("/member/:memberid")
+  // to display content member 
+  .get(memberController.displayMember)
+  // to update content member
+  .put(memberController.updateMember)
+
+// to delete member  
+app
+  .route("/member/delete/:memberid")  
+  .delete(memberController.deleteMember);
 
 // displaying a message when server is running
 app.listen(port, () => {

@@ -28,6 +28,7 @@ Here, I called my cluster `mdsOptimPerf`
 **Lauch the three instances of mongoDB replicaset**
 
 _First instance: PRIMARY_
+
 `docker run \
 -p 30001:27017 \
 --name mongo1 \
@@ -35,6 +36,7 @@ _First instance: PRIMARY_
 mongo mongod --replSet mongo-set`
 
 _Second instance: SECONDARY_
+
 `docker run \
 -p 30002:27017 \
 --name mongo2 \
@@ -42,6 +44,7 @@ _Second instance: SECONDARY_
 mongo mongod --replSet mongo-set`
 
 _Third instance: SECONDARY_
+
 `docker run \
 -p 30003:27017 \
 --name mongo3 \

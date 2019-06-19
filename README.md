@@ -2,7 +2,7 @@
 
 ## Architecture of the project
 
-![The architecture](https://user-images.githubusercontent.com/32523957/59745654-90d1ac80-9275-11e9-87e9-c71452a0f21b.png)
+![The architecture](https://user-images.githubusercontent.com/32523957/59774388-abc11280-92af-11e9-987d-84822402c519.png)
 
 ## Mongodb
 ### Online

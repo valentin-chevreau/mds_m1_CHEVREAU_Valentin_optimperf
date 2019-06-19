@@ -5,7 +5,7 @@
 ![The architecture](https://user-images.githubusercontent.com/32523957/59745654-90d1ac80-9275-11e9-87e9-c71452a0f21b.png)
 
 ## Mongodb
-
+### Online
 Create your cluster
 
 To create your cluster, go to **[MongoDB Atlas](https://www.mongodb.com/cloud/atlas)** and sign in with the `Start free` button.
@@ -20,17 +20,67 @@ Here, I called my cluster `mdsOptimPerf`
 
 3. Click on **Create cluster**
 
+### In local
+
+**Create your cluster** 
+`docker network create mongo-cluster`
+
+**Lauch the three instances of mongoDB replicaset**
+
+_First instance: PRIMARY_
+`docker run \
+-p 30001:27017 \
+--name mongo1 \
+--net mongo-cluster \
+mongo mongod --replSet mongo-set`
+
+_Second instance: SECONDARY_
+`docker run \
+-p 30002:27017 \
+--name mongo2 \
+--net mongo-cluster \
+mongo mongod --replSet mongo-set`
+
+_Third instance: SECONDARY_
+`docker run \
+-p 30003:27017 \
+--name mongo3 \
+--net mongo-cluster \
+mongo mongod --replSet mongo-set`
 
 ## Installation
 
-1. Dépendencies
+**Dépendencies**
 
 Use the `npm install -S` command to get them. 
 
 This command install all dependencies needed in the project, which are presents in the `package.json` file.
 
-2. Inquire your *Cluster URL* in `db.js` file in `config` directory or comment and uncomment the right configuration.
+**Cluster URL**
+
+Inquire your *Cluster URL* in `db.js` file in `config` directory or comment and uncomment the right configuration.
 
 ## Run
 
-To run the app `npm run start`
+Go to the project directory.
+
+To run the app, launch this command:
+`npm run start`
+
+## Routes
+
+**IN GET**
+To _list_ all tasks: `localhost:{port}/tasks`
+To _search_ a specific task: `localhost:{port}/tasks/:taskid`
+
+**IN POST**
+
+To _create_ a task: `localhost:{port}/tasks`
+This previous command require to give the informations needed to create ("taskName")
+
+**IN PUT**
+To _update_ a specific task: `localhost:{port}/tasks`
+This previous command require to give the informations to modify ("taskName" for exemple)
+
+**IN DELETE**
+To _delete_ a specific task: `localhost:{port}/tasks/:taskid`

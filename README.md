@@ -70,16 +70,20 @@ To run the app, launch this command:
 ## Routes
 
 **IN GET**
+
 To _list_ all tasks: `localhost:{port}/tasks`
+
 To _search_ a specific task: `localhost:{port}/tasks/:taskid`
 
 **IN POST**
 
 To _create_ a task: `localhost:{port}/tasks`
+
 This previous command require to give the informations needed to create ("taskName")
 
 **IN PUT**
 To _update_ a specific task: `localhost:{port}/tasks`
+
 This previous command require to give the informations to modify ("taskName" for exemple)
 
 **IN DELETE**

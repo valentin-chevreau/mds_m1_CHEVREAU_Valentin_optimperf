@@ -93,24 +93,25 @@ To run the app, launch this command:
 
 ## Using Docker
 
-***Dockerfile***
-### Commands
+### Dockerfile
+Commands
 Dockerfiles are files that allow to build a Docker image adapted to our needs, step by step.
 
-*FROM* allows us to define our basic image.
+- **FROM** allows us to define our basic image.
 
-*RUN* allows you to execute a command inside your image as if you were in front of a unix shell.
+- **RUN** allows you to execute a command inside your image as if you were in front of a unix shell.
 
-*ADD* allows you to add local or remote files inside your image.
+- **ADD** allows you to add local or remote files inside your image.
 
-*EXPOSE* and *VOLUME* respectively indicate which port and which file we wish to share.
+- **EXPOSE** and **VOLUME** respectively indicate which port and which file we wish to share.
 
-*CMD*, allows us to specify which instruction should execute when the container is launched.
+- **CMD**, allows us to specify which instruction should execute when the container is launched.
 
 Run the Dockerfile
 `docker build /yourRepositoryPath/`
 
-***Docker-Compose***
+### Docker-Compose
+
 Docker-compose allows to execute and to put in relation the different images which our application needs.
 
 it allows you to quickly and automatically build an existing project.

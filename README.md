@@ -94,7 +94,7 @@ To run the app, launch this command:
 ## Using Docker
 
 ### Dockerfile
-Commands
+
 Dockerfiles are files that allow to build a Docker image adapted to our needs, step by step.
 
 - **FROM** allows us to define our basic image.
@@ -114,7 +114,7 @@ Run the Dockerfile
 
 Docker-compose allows to execute and to put in relation the different images which our application needs.
 
-it allows you to quickly and automatically build an existing project.
+It allows you to quickly and automatically build an existing project.
 
 Run the Docker-Compose
 `docker-compose up -d && docker-compose logs -f` ( && docker-compose logs -f is not mandatory, but simply to see logs)
